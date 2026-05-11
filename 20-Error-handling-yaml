@@ -1,0 +1,29 @@
+- name: Demo on error handling
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name: check user exist or not
+    ansible.builtin.command: id lavanya
+    register: user_output
+    ignore_errors: yes
+
+  - name: print output
+    ansible.builtin.debug:
+      msg: "{{ user_output }}"  
+
+  - nmae: create user
+    ansible.builtin.command: useradd lavanya
+    when : user_output != 0
+
+    #By default ansible doesn't handle errors and if any task fails, the playbook will stop executing
+    # and it will show the error message. But in some cases, we want to ignore the errors and continue 
+    #with the next tasks. In this playbook, we are using the ignore_errors keyword to ignore the errors
+    # that occur in the first task, which is checking if the user "lavanya" exists or not. If the user 
+    #doesn't exist, it will show an error message but it will continue with the next task, which is 
+    #creating the user "lavanya". The when condition is used to check if the user_output is not equal 
+    #to 0, which means that the user doesn't exist and we need to create it.
+
+    #If user is not already present rC is 1 meaaning return code is not suceess thats why we are 
+    #checking if user_output is not equal to 0 then only we will create the user. If the user is 
+    #already present then user_output will be 0 and it will not execute the task to create the user.

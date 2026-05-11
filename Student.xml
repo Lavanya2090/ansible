@@ -1,0 +1,68 @@
+<!-- Student information during school time
+1.name
+2.dob
+3.email
+4.adress
+above information all in one object 
+Adrees object creation
+1.flat no
+2.city
+3.state
+like above we can create number of objects inside of the objetcs -->
+
+<!-- list of students information -->
+<students>
+<!-- student object information -->
+    <!-- First student information --> 
+    <student>
+        <firstname>lavanya</firstname>
+        <dob>30-07-1993</dob>
+        <email>lavanya@example.com</email>
+        <!-- adress object data -->
+        <!--<address>
+            <flatno>123</flatno>
+            <city>Hyderabad</city>
+            <state>Telangana</state>
+        </address> -->
+        <!-- more than one address we can create like below -->
+        <addresses>
+            <permanentaddress>
+                <flatno>123</flatno>
+                <city>Hyderabad</city>
+                <state>Telangana</state>
+            </permanentaddress>
+            <currentaddress>
+                <flatno>456</flatno>
+                <city>Hyderabad</city>
+                <state>Telangana</state>
+            </currentaddress>    
+        </addresses>
+    </student>
+
+    <!-- Second student information --> 
+        <student>
+        <firstname>Raji</firstname>
+        <dob>30-07-1993</dob>
+        <email>raji@example.com</email>
+        <!-- adress object data -->
+        <!--<address>
+            <flatno>123</flatno>
+            <city>Hyderabad</city>
+            <state>Telangana</state>
+        </address> -->
+        <!-- more than one address we can create like below -->
+        <addresses>
+            <permanentaddress>
+                <flatno>123</flatno>
+                <city>Hyderabad</city>
+                <state>Telangana</state>
+            </permanentaddress>
+            <currentaddress>
+                <flatno>456</flatno>
+                <city>Hyderabad</city>
+                <state>Telangana</state>
+            </currentaddress>    
+        </addresses>
+    </student>
+    
+</students>

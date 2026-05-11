@@ -1,0 +1,25 @@
+- name: vars preference
+  hosts: local
+  connection: local
+  vars:
+    NAME: "Ansible from play"
+  vars_files:
+  - course.yaml
+  vars_promt:
+  - name: NAME
+    promt: enter name
+    privtate: false
+  tasks:
+  - name: print name  
+    vars:
+      NAME: "Ansible from task"  
+    ansible.builtin.debug:
+      msg: "Hi: {{NAME}}"  
+
+#top priority for arguments passed through cmd
+#second priority for variables declared in the task
+#third priority for variables declared in the file
+#fourth priority for variables declared in the promt
+#fifth priority for variables declared in the play level vars
+#sixth priority for variables declared in the inventory file
+

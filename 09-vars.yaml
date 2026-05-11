@@ -1,0 +1,9 @@
+- name: vars from args
+  hosts: local
+  connection: local
+  tasks:
+  - name: print vars from args
+    ansible.builtin.debug:
+    msg: "name is : {{NAME}}, is depos engineer"
+
+    #cmd to execute above file wth args is: ansible-playbook -i inventory.ini -e NAME=lavanya 09-vars.yaml

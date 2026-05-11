@@ -1,0 +1,9 @@
+- nmae: play level variables 
+  host: local
+  connection: local
+  tasks:
+  - name: print variables
+    ansible.builtin.debug:
+      msg: "course is: {{ course }}"
+
+      #for this filecourse var is declared in inventory under loca vars section and it is available for all the tasks in the playbook since it is declared at the play level. We can use this variable in any task in the playbook and it will print the value of the course variable which is "AWS".

@@ -1,0 +1,12 @@
+- name: install packages
+  hosts: local
+  connection: local
+  tasks:
+  - name: install packages
+    ansibible.builtin.debug:
+       name: "{{ item.name }}"
+       state: "{{ item.state }}"
+    loop: #list
+    - { name: "mysql", state: "absent"}  #map or dictionary
+    - { name: "nginx", state: "present"}
+    - { nmae: "zip", state: "present"}

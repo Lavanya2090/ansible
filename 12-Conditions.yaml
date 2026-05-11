@@ -1,0 +1,13 @@
+
+-name: Demo on conditions
+ hosts: local
+ connection: local
+vars:
+   IS_LIVE: true
+tasks:
+ - name: check if the course is live  
+   ansible.builtin.debug:
+     msg: "Course is live"
+   when: IS_LIVE
+
+    #when condition is used to execute a task only when a certain condition is met. In this playbook, we are using the when condition to check if the IS_LIVE variable is true. If the condition is true, then the task will be executed and it will print "Course is live". If the condition is false, then the task will be skipped and it will not print anything.

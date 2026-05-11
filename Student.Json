@@ -1,0 +1,59 @@
+
+{
+    "students" :[
+        {
+            "name" : "John Doe",
+            "dob" : "01-01-1990",
+
+            "addresses" : [
+                {
+                    "type" : "home",
+                    "street" : "123 Main St",
+                    "city" : "Anytown",
+                    "state" : "CA",
+                    "zip" : "12345"
+                },
+                {
+                    "type" : "work",
+                    "street" : "456 Market St",
+                    "city" : "Anytown",
+                    "state" : "CA",
+                    "zip" : "67890"
+                }
+            ],
+
+    "skills" : ["Python", "Ansible", "Docker"]
+            
+        },
+
+        {
+            "name" : "John Doe",
+            "dob" : "01-01-1990",
+
+            "addresses" : [
+                {
+                    "type" : "home",
+                    "street" : "123 Main St",
+                    "city" : "Anytown",
+                    "state" : "CA",
+                    "zip" : "12345"
+                },
+                {
+                    "type" : "work",
+                    "street" : "456 Market St",
+                    "city" : "Anytown",
+                    "state" : "CA",
+                    "zip" : "67890"
+                }
+            ],
+
+            "skills" : ["Python", "Ansible", "Docker"]
+            
+        }
+
+    ]
+}
+
+
+
+

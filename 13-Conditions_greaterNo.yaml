@@ -1,0 +1,13 @@
+- name: check a number i s less than 10 or not
+  hosts: local
+  connection: local
+  vars:
+    Numberof_sessions: 7
+
+  task:
+  - nmae: Is ansible more than 5 sessions
+    ansible.builtin.debug:
+      msg: "Ansible is more than 5 sessions"
+    when: Numberof_sessions > 5
+
+    #when condition is used to execute a task only when a certain condition is met. In this playbook, we are using the when condition to check if the Numberof_sessions variable is greater than 5. If the condition is true, then the task will be executed and it will print "Ansible is more than 5 sessions". If the condition is false, then the task will be skipped and it will not print anything.  

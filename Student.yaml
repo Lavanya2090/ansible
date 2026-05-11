@@ -1,0 +1,23 @@
+- name: "Lavanya"
+  age: 22
+  state: "Karnataka"
+  addresses:
+  - flat no: 123
+    type: "permanent
+    city: "Bangalore"
+
+  - flat no: 123657
+    type: "current
+    city: "hyd"
+
+- name: "ManoVenky"
+  age: 22
+  state: "Karnataka"
+  addresses:
+  - flat no: 123
+    type: "permanent
+    city: "Bangalore"
+
+  - flat no: 123657
+    type: "current
+    city: "hyd"

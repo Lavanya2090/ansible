@@ -1,0 +1,9 @@
+# debug module is used to print the output of the task in a readable format. It is useful for debugging
+# purposes and to check the values of variables or the output of a task. In this playbook, we are using the
+# debug module to print the output of the ping task, which will show us if the server is reachable or not.
+- name: hello world
+  hosts: web
+  tasks:
+  - name: Hello world
+    ansible.builtin.debug:
+      msg: "Print hello world"

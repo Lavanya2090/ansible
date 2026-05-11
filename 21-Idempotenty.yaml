@@ -1,0 +1,19 @@
+- nmae: check Idempotenty
+  hosts: local
+  connection: local
+  tasks:
+  - nmae: user create
+    ansible.builtin.user:
+      name: lavanya
+      state: present
+
+ #If use ansible collections, it will check the state of the user and if the user is already present,
+ # it will not create the user again. It will return "ok" status. If the user is not present, 
+ #it will create the user and return "changed" status. This is called idempotency in Ansible. 
+ #Idempotency means that you can run the same playbook multiple times and it will not change the 
+ #state of the system if it is already in the desired state.     
+
+ #If collection is not availbale use command module or shell module to create user, 
+ #it will not check the state of the user and it will create the user every time you run the playbook. 
+ #It will return "changed" status every time you run the playbook, even if the user is already present.
+ # This is not idempotent and it can cause issues if you run the playbook multiple times.

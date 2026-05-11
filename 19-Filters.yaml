@@ -1,0 +1,46 @@
+- name: Demo on Filters
+  hosts:local
+  connection:local
+  vars:
+  topics: linux, shell, ansible, teraform
+
+  tagsMap:
+    name: ansible
+    name: teraform
+    name: roboshop
+
+  tagsList:[
+      {
+            "key": "name"
+            "value": "ansible"
+      },
+      {
+            "key": "project"
+            "value": "roboshop"
+      },  
+      {
+            "key": "componnet"
+            "value": "cataloge"
+      }        
+    ]
+
+  tasks:
+  - name: greeting
+    ansible.builtin.debug:
+        msg: "Hi Lav, {{ GREETING | default( 'Good mng mam') }}"
+
+  - name: Conevert string to list:
+    ansible.builtin.debug:
+        msg: "{{ topics | split (,) }}"   
+
+  - name: convert map to list:
+    ansible.builtin.debug:
+        msg: "{{ tagsMap | dict2items }}"
+
+  - name: list to map:
+    ansible.builtin.debug:
+        msg: "{{ tagsList | items2dict }}"    
+
+  - name: read students yaml        
+    ansible.builtin.set_fact:
+        msg: "{{ lookup('file', 'students.yaml') | from_yaml }}"

@@ -1,0 +1,13 @@
+- name: demo on loops
+  hosts: local
+  connection: local
+  tasks:
+  - name: print names
+    ansible.builtin.debug:
+      msg: "hello: {{ item }}"
+    loop: #list of string
+    - lavanya
+    - devops
+    - ansible
+
+    #Item wil replace evrytime with the value in the loop    

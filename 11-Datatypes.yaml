@@ -1,0 +1,26 @@
+- name: Demo on data types
+  hosts: local
+  connection: local
+  vars:
+    PROGRAM: "DEV SECOPS WITH AWS" #STRING DATA TYPE
+    DURATION: 140 #INTEGER DATA T
+    IS_LIVE: bool
+    DETAILS: #map/dictionary data type
+      MONTHS: 4
+      TRAINER: LAVANYA
+    TOPICS: #list data type-/[]
+      - AWS
+      - DEVOPS
+      - SECURITY  
+  tasks:
+  - name: print var
+      ansible.builtin.debug:
+      
+        msg: | 
+          Program is : {{PROGRAM}}
+          duration is : {{DURATION}}
+          is live: {{IS_LIVE}}
+          details: {{DETAILS}} 
+          topics: {{TOPICS}}
+
+          # pipe for multiline string
