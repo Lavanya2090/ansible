@@ -1,6 +1,5 @@
 
-# this playbook file is just to test the connectivity of the server using ansible ping module.
-become: true
+# this playbook file is just to test the connectivity of the server using ansible ping mod
 - name: ping the server
   hosts: web
   tasks:
