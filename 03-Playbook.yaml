@@ -1,17 +1,14 @@
-#Playbook is list of tasks that can be executed against any server as part of the configuration management
-#install any sw lik enginx using ansible or using playbook install nginx
-- name: Install and run nginx module
+- name: install and run nginx
   hosts: web
-  #Root acceess we are using become cmd
   become: yes
   tasks:
-  - name: Install nginx sw
+  - name: install nginx
     ansible.builtin.package:
       name: nginx
       state: present
 
-  - name: start nginx service
+  - name: start nginx
     ansible.builtin.service:
-    name: nginx
-    state: started
-    enabled: yes    
+      name: nginx
+      state: started
+      enabled: yes
