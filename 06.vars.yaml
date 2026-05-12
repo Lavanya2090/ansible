@@ -7,6 +7,6 @@
   tasks:
   - name: connect to the local server
     vars:
-      course: "AWS"
+      COURSE: "AWS"
     ansible.builtin.debug:
       msg: "Hello course is: {{COURSE}}, hello trainer is : {{TRAINER}}, hello no of hrs: {{HOURS}}"
