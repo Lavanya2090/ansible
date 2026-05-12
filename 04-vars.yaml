@@ -3,16 +3,16 @@
   host: local
   connection: local
   vars:
-    global variable is defined at the play level and it is available for all the tasks in the playbook. Global variables are defined using the vars keyword at the play level.
+    #global variable is defined at the play level and it is available for all the tasks in the playbook. Global variables are defined using the vars keyword at the play level.
     COURSE: "DEVOPS"
     HOURS: "140HRS"
     TRAINER: "LAVANYA"
 
   tasks:
-  - name: connect to the local server
+  - name: print variables
     vars:
     #local variable is defined inside the task and it is only available for that task. It is not available for other tasks in the playbook. Local variables are defined using the vars keyword inside the task.
-      course: "AWS"
+      COURSE: "AWS"
     ansible.builtin.debug:
       #For varaibles we need to use double curly braces and the variable name inside it. This is 
       #called jinja2 syntax. We can use this syntax to print the value of the variable in the output.
