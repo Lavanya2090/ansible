@@ -1,0 +1,12 @@
+#instead of using vars in one same file we can also use vars in a separate file and then we can include that file in the playbook using the vars_files keyword. This is a better way to manage variables in a playbook since it keeps the playbook clean and organized. We can also use the same variable file for multiple playbooks if needed. This way we can avoid duplication of variables in multiple playbooks and we can also easily manage the variables in one place.
+- name: PLAY level variables 
+  host: local
+  connection: local
+  vars_files:
+  - course.yaml
+  tasks:
+  - name: connect to the local server
+    vars:
+      COURSE: "AWS"
+    ansible.builtin.debug:
+      msg: "Hello course is: {{COURSE}}, hello trainer is : {{TRAINER}}, hello no of hrs: {{HOURS}}"
