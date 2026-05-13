@@ -4,6 +4,6 @@
   tasks:
   - name: print variables from args
     ansible.builtin.debug:
-     msg: "name is {{NAME}}, is depos engineer"
+     msg: "name is {{LAV}}, is depos engineer"
 
     #cmd to execute above file wth args is: ansible-playbook -i inventory.ini -e NAME=lavanya 09-vars.yaml
